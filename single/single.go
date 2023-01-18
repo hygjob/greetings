@@ -7,7 +7,7 @@ import (
     "time"    
 )
 
-tryp Error struct {
+type Error struct {
     whentime.Time
     what string
 
