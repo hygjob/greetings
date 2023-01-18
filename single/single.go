@@ -42,7 +42,7 @@ func randomFormat(userand bool) string {
     if userand == true {
         return formats[rand.Intn(len(formats))]
     } 
-    return format[0]
+    return formats[0]
     
 }
 /*
