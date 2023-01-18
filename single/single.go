@@ -3,9 +3,24 @@ package single
 import (
     "errors"
     "fmt"
+    "math/rand"    
 )
 
 // Hello returns a greeting for the named person.
+func Hello(name string, short bool) (string, error) {
+    // If no name was given, return an error with a message.
+    if name == "" {
+        return "", errors.New("empty name")
+    }
+
+    // If a name was received, return a value that embeds the name
+    // in a greeting message.
+    //message := fmt.Sprintf("Hi, %v. Welcome!", name)
+    message := fmt.Sprintf(randomFormat(short), name)
+    return message, nil
+}
+
+/*
 func Hello(name string) (string, error) {
     // If no name was given, return an error with a message.
     if name == "" {
@@ -17,3 +32,4 @@ func Hello(name string) (string, error) {
     message := fmt.Sprintf("Hi, %v. Welcome!", name)
     return message, nil
 }
+*/
