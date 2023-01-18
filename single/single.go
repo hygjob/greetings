@@ -7,11 +7,22 @@ import (
     "time"    
 )
 
+tryp Error struct {
+    whentime.Time
+    what string
+
+}
+
+func (e Error) Error() string {
+    return fmt.Sprintf("%s Error!! at %v", e.what, e.when)
+}
+
 // Hello returns a greeting for the named person.
 func Hello(name string, userand bool) (string, error) {
     // If no name was given, return an error with a message.
     if name == "" {
-        return "", errors.New("empty name")
+        //return "", errors.New("empty name")
+        return "", Error{time.Now(), "empty name"}
     }
 
     // If a name was received, return a value that embeds the name
