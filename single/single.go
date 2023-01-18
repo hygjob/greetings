@@ -12,7 +12,7 @@ type Error struct {
     what string
 
 }
-
+// error function
 func (e Error) Error() string {
     return fmt.Sprintf("%s Error!! at %v", e.what, e.when)
 }
