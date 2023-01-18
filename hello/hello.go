@@ -3,7 +3,8 @@ package main
 import (
 	"fmt"
 	"log"
-	"github.com/hygjob/greetings/single"
+	//"github.com/hygjob/greetings/single"
+	"github.com/hygjob/greetings/v2/single"
 )
 
 func main() {
@@ -11,9 +12,11 @@ func main() {
 	log.SetPrefix("greetings: ")
 	log.SetFlags(0)
 
-	message, err := single.Hello("John", true)
+	message, err := single.Hello("", true)
 	if err == nil {
-		fmt.Println(message)
+		fmt.Println(message)	
+	} else {
+		log.Fatal(err)
 	}
 
 }
