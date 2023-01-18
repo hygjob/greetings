@@ -1,14 +1,14 @@
 package single
 
 import (
-    "errors"
+    //"errors"
     "fmt"
     "math/rand"
     "time"    
 )
 
 type Error struct {
-    whentime.Time
+    when time.Time
     what string
 
 }
